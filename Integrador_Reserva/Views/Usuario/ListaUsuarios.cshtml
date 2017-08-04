@@ -1,0 +1,20 @@
+﻿@model Integrador_Reserva.Models.UsuarioViewModel
+@{
+    ViewBag.Title = "ListaUsuarios";
+}
+<script src="~/Scripts/Usuario/listar.js"></script>
+<h2>Listado de Usuarios</h2>
+<div class="row">
+    <div class="control-group">
+        <div class="col-lg-3">
+            <input type="text" id="txt_Nombre" class="form-control" placeholder="Ingrese nombre" />
+        </div>
+       <!-- <input type="button" value="Buscar" class="btn btn-primary col-lg-2" id="btn-buscar" style="margin-left:10px; margin-right:10px;" />-->
+        <input type="button" value="Nuevo" class="btn btn-warning col-lg-2" id="btn-Nuevo" />
+    </div>
+</div>
+<br />
+<br />
+<div class="">
+    @Html.Partial("usuarios", Model)
+</div>

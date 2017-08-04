@@ -1,0 +1,30 @@
+﻿@model Integrador_Reserva.Models.UsuarioCanchaViewModel
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/Usuario/listar.js"></script>
+<h2>Lista de Canchas</h2>
+<div class="row">
+    <div class="control-group">
+        <div class="col-lg-3">
+            <input type="text" id="txt_Nombre" class="form-control" placeholder="Ingrese nombre cancha"/>
+        </div>
+        <input type="button" value="Buscar" class="btn btn-primary col-lg-2" id="btn-buscar" style="margin-left:10px; margin-right:10px;" />
+        
+        <input type="button" value="Agregar cancha" class="btn btn-warning col-lg-2"
+               onclick="location.href='@Url.Action("RegistrarCancha", "Usuario", new {
+                                          usuario_id = Model.usuario.usuario_id,
+                                          usuario_nombre= Model.usuario.usuario_nombre,
+                                          usuario_razonsocial= Model.usuario.usuario_razonsocial
+                                      }
+                                                                               )'" />
+
+        
+    </div>
+</div>
+<br />
+<br />
+<div class="">
+    @Html.Partial("canchas", Model)
+</div>

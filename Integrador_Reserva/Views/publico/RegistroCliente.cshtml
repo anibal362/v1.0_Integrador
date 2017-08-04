@@ -1,0 +1,159 @@
+﻿@model Integrador_Reserva.Models.UsuarioCanchaViewModel
+
+@{
+    ViewBag.Title = "RegistroCliente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    sup {
+        color: #F05353;
+        font-size: 14px;
+        top: -1px;
+        left: 2px;
+    }
+</style>
+<div class="container">
+    <div id="signupbox" style=" margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <div class="panel-title">Registro de Cliente</div>
+            </div>
+            <div class="panel-body">
+
+@using (Html.BeginForm("RegistroCliente", "publico", FormMethod.Post, new { @id = "frm-anadirUsuario", @class = "well" }))
+{
+
+                    <div id="div_id_username" class="form-group required">
+                        <label for="id_username" class="control-label col-md-4  requiredField">
+                            Nombre
+                            <span class="asteriskField">*</span>
+                        </label>
+                        <div class="controls col-md-8 ">
+                            @Html.TextBoxFor(usuario => usuario.usuario.usuario_nombre,
+             new
+             {
+                 @class = "form-control input-md textinput textInput",
+                 @placeholder = "Ingrese su nombre completo",
+                 @Value = "",
+                 @required = "",
+                 @style = "margin-bottom: 10px"
+
+             })
+                        </div>
+                    </div>
+
+                    <div id="div_id_password1" class="form-group required">
+                        <label for="id_password1" class="control-label col-md-4  requiredField">
+                            Contraseña
+                            <span class="asteriskField">*</span>
+                        </label>
+                        <div class="controls col-md-8 ">
+                            @Html.PasswordFor(usuario => usuario.usuario.usuario_contraseña,
+             new
+             {
+                 @class = "form-control input-md textinput textInput",
+                 @placeholder = "Ingrese una contraseña",
+                 @required = "",
+                 @style = "margin-bottom: 10px"
+
+             })
+                        </div>
+                    </div>
+
+                    <div id="div_id_username" class="form-group required">
+                        <label for="id_username" class="control-label col-md-4  requiredField">
+                            Razon Social
+                            <span class="asteriskField">*</span>
+                        </label>
+                        <div class="controls col-md-8 ">
+                            @Html.TextBoxFor(usuario => usuario.usuario.usuario_razonsocial,
+             new
+             {
+                 @class = "form-control input-md textinput textInput",
+                 @placeholder = "Ingrese su razon social",
+                 @required = "",
+                 @style = "margin-bottom: 10px"
+             })
+                        </div>
+                    </div>
+
+                    <div id="div_id_email" class="form-group required">
+                        <label for="id_email" class="control-label col-md-4  requiredField">
+                            RUC
+                            <span class="asteriskField">*</span>
+                        </label>
+                        <div class="controls col-md-8 ">
+                            @Html.TextBoxFor(usuario => usuario.usuario.usuario_ruc,
+             new
+             {
+                 @class = "form-control input-md textinput textInput",
+                 @placeholder = "Ingrese su número de RUC",
+                 @required = "",
+                 @style = "margin-bottom: 10px"
+             })
+                        </div>
+                    </div>
+
+                    <div id="div_id_email" class="form-group required">
+                        <label for="id_email" class="control-label col-md-4  requiredField">
+                            E-mail
+                            <span class="asteriskField">*</span>
+                        </label>
+                        <div class="controls col-md-8 ">
+                            @Html.TextBoxFor(usuario => usuario.usuario.usuario_email,
+             new
+             {
+                 @class = "form-control input-md emailinput",
+                 @placeholder = "Ingrese su email",
+                 @required = "",
+                 @style = "margin-bottom: 10px"
+             })
+                        </div>
+                    </div>
+
+                    <div id="div_id_number" class="form-group required">
+                        <label for="id_number" class="control-label col-md-4  requiredField">
+                            Télefono
+                            <span class="asteriskField">*</span>
+                        </label>
+                        <div class="controls col-md-8 ">
+                            @Html.TextBoxFor(usuario => usuario.usuario.usuario_telefono,
+             new
+             {
+                 @class = "form-control input-md textinput textInput",
+                 @placeholder = "Ingrese su telefono",
+                 @required = "",
+                 @style = "margin-bottom: 10px"
+             })
+                        </div>
+                    </div>
+
+                    <div id="div_id_name" class="form-group required">
+                        <label for="id_name" class="control-label col-md-4  requiredField">
+                            Presentación<span class="asteriskField">*</span>
+                        </label>
+                        <div class="controls col-md-8 ">
+                            @Html.TextBoxFor(usuario => usuario.usuario.usuario_presentacion,
+             new
+             {
+                 @class = "form-control input-md textinput textInput",
+                 @placeholder = "Ingrese una presentación",
+                 @required = "",
+                 @style = "margin-bottom: 10px"
+             })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="aab controls col-md-4 "></div>
+                        <div class="controls col-md-8 ">
+                            <button type="submit" id="registrar" name="registrar" class="btn btn-success">Registrar</button>
+
+                        </div>
+                    </div>
+}
+                
+            </div>
+        </div>
+    </div>
+</div>

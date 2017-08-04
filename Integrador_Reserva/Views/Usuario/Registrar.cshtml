@@ -1,0 +1,50 @@
+﻿@model Integrador_Reserva.Models.UsuarioViewModel
+@{
+    ViewBag.Title = "Registrar";
+}
+<script src="~/Scripts/Usuario/registrarUsuario.js"></script>
+<h2>Registrar Usuario</h2>
+@using (Html.BeginForm("Registrar", "Usuario", FormMethod.Post, new { @id = "frm-registroUsuario", @class = "well" }))
+{
+    <div class="col-lg-6 col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(user => user.usuario.usuario_nombre)
+            @Html.TextBoxFor(user => user.usuario.usuario_nombre, new { @class = "form-control" , @required = "" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(user => user.usuario.usuario_contraseña)
+            @Html.TextBoxFor(user => user.usuario.usuario_contraseña, new { @class = "form-control", @required = "" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(user => user.usuario.usuario_razonsocial)
+            @Html.TextBoxFor(user => user.usuario.usuario_razonsocial, new { @class = "form-control", @required = "" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(user => user.usuario.usuario_ruc)
+            @Html.TextBoxFor(user => user.usuario.usuario_ruc, new { @class = "form-control", @required = "" })
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6">
+        <div class="form-group">
+            @Html.LabelFor(user => user.usuario.usuario_email)
+            @Html.TextBoxFor(user => user.usuario.usuario_email, new { @class = "form-control", @required = "" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(user => user.usuario.usuario_telefono)
+            @Html.TextBoxFor(user => user.usuario.usuario_telefono, new { @class = "form-control", @required = "" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(user => user.usuario.usuario_foto_url)
+            @Html.TextBoxFor(user => user.usuario.usuario_foto_url, new { @class = "form-control", @required = "" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(user => user.usuario.usuario_presentacion)
+            @Html.TextBoxFor(user => user.usuario.usuario_presentacion, new { @class = "form-control", @required = "" })
+        </div>
+    </div>
+
+
+    <input type="button" class="btn btn-primary col-md-1" value="Registrar" id="btn_Registrar" style="margin-left:16px;" />
+    <input type="button" class="btn btn-warning " value="Salir" id="btn_Salir" style="margin-left:10px;" />
+
+}   
