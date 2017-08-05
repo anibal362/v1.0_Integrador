@@ -81,7 +81,7 @@ namespace Integrador_Reserva.Sources.DataAccess
                 else
                 {
                     procedimiento = Constante.USP_SEL_ALLCANCHAxCANCHA_DISTRITO;
-                    command.Parameters.Add("@cancha_nombre", SqlDbType.VarChar).Value = objCancha.cancha_nombre;
+                    command.Parameters.Add("@cancha_nombre", SqlDbType.VarChar).Value = objCancha.cancha_distrito;
                 }
 
             }
@@ -97,7 +97,7 @@ namespace Integrador_Reserva.Sources.DataAccess
                 else
                 {
                     procedimiento = Constante.USP_SEL_ALLCANCHAxCANCHA_DISTRITO_ID_DISTRITO_NAME;
-                    command.Parameters.Add("@cancha_nombre", SqlDbType.VarChar).Value = objCancha.cancha_nombre;
+                    command.Parameters.Add("@cancha_nombre", SqlDbType.VarChar).Value = objCancha.cancha_distrito;
                 }
             }
 
